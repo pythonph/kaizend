@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PythonPH Kaizend: Continuous Improvement & Leadership</title>
+
+  <!-- Meta -->
+  <meta name="description" content="Kaizend is PythonPH’s continuous improvement and leadership framework — a living system of stewards who sustain the community’s culture, knowledge, and growth.">
+  <meta property="og:title" content="PythonPH Kaizend: Stewardship in Motion">
+  <meta property="og:description" content="The open playbook of how PythonPH cultivates leadership, ensures continuity, and keeps its community thriving.">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630/4489D9/FFFFFF?text=PythonPH+Kaizend">
+
+  <!-- Font: Glacial Indifference -->
+  <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f2f3f5;
+      --text: #1f313c;
+      --muted: #d5d8db;
+      --accent-blue: #4489d9;
+      --card: #ffffff;
+      --radius: 14px;
+      --maxw: 980px;
+      --navh: 58px;
+      --pad-section: 130px; /* increased spacing */
+    }
+
+    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Glacial Indifference', system-ui, -apple-system, sans-serif;
+      font-size: 18px;
+      line-height: 1.75;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    a { color: var(--accent-blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Navigation */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      height: var(--navh);
+      background: var(--bg);
+      border-bottom: 1px solid var(--muted);
+      backdrop-filter: blur(6px);
+    }
+
+    .topnav .wrap {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 700;
+      color: var(--text);
+      font-size: 18px;
+      letter-spacing: 0.2px;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 15px;
+    }
+
+    .navlinks a { color: var(--text); opacity: 0.85; }
+    .navlinks a:hover { opacity: 1; text-decoration: underline; }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header, section {
+      padding: var(--pad-section) 0;
+    }
+
+    .rule {
+      width: 60%;
+      height: 1px;
+      background: var(--muted);
+      margin: var(--pad-section) auto;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 0.6em 0;
+      line-height: 1.25;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      text-align: center;
+    }
+
+    h2 {
+      font-size: clamp(26px, 3vw, 34px);
+      text-align: center;
+      border-bottom: 3px solid var(--text);
+      display: inline-block;
+      padding-bottom: 0.3em;
+      margin-bottom: 1.5em;
+    }
+
+    h3 { font-size: 20px; margin-top: 0; }
+
+    p {
+      margin: 0 0 1.4em 0;
+      color: var(--text);
+    }
+
+    .lead {
+      font-size: 20px;
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 1.5em;
+    }
+
+    .muted { color: #4a5c68; text-align: center; }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding-top: calc(var(--pad-section) + 40px);
+    }
+
+    .hero-logo {
+      margin: 0 auto 50px;
+      max-width: 320px; /* limits logo width */
+      text-align: center;
+    }
+
+    .hero-logo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px; /* optional: keeps soft rounded edges */
+    }
+
+
+    .cta {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent-blue);
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.4px;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .cta:hover { background: #67b8ec; }
+    .cta:active { transform: translateY(1px); }
+
+    .bar {
+      text-align: center;
+      margin-top: 2.5em;
+    }
+
+    .grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .cards { margin-top: 40px; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--muted);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    @media (min-width: 760px) {
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .list { padding-left: 1em; }
+    .list li { margin: 0.7em 0; }
+
+    footer {
+      padding: 60px 0;
+      text-align: center;
+      font-size: 15px;
+      color: #4a5c68;
+      border-top: 1px solid var(--muted);
+      background: var(--bg);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAV -->
+  <nav class="topnav" aria-label="Primary">
+    <div class="wrap">
+      <a class="brand" href="#hero">PythonPH Kaizend</a>
+      <div class="navlinks">
+        <a href="#what-is-kaizend">What</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#structure">Structure</a>
+        <a href="#rhythm">Rhythm</a>
+        <a href="#privileges">Privileges</a>
+        <a href="#faq">FAQ</a>
+        <a href="#apply">Apply</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero wrap" id="hero">
+    <div class="hero-logo">
+      <img src="kaizend-logo.svg" alt="PythonPH Logo">
+    </div>
+    <h1>PythonPH Kaizend: Our Framework for Stewardship & Continuity</h1>
+    <p class="lead muted">
+     <strong>PythonPH</strong> is both a community and a registered non-profit that supports it — a volunteer-run organization helping Python enthusiasts, developers, and educators across the Philippines learn, connect, and grow together. We believe Python changes lives by giving people the tools to create, solve problems, and share ideas with the world. Through events like PyCon Philippines (PyCon PH) and PythonPH Meetups, we foster a culture of openness, learning, and collaboration.
+    </p>
+    <h2 style="border: none; margin-top: 2em;">Building the Future, One Steward at a Time</h2>
+    <p class="lead">
+      <strong>Kaizend</strong> is how PythonPH <strong>nurtures and sustains its leaders</strong> — our continuous improvement and leadership program for core volunteers who keep the community learning, evolving, and thriving. Through Kaizend, volunteers grow and develop <strong>technical skills, soft skills and life skills</strong>, learning how to lead, collaborate, and build with purpose.
+    </p>
+    <p class="lead muted">
+      This page is an <strong>open playbook for the community</strong> — our way of sharing how we build together, learn from each other, and keep the spirit of PythonPH growing year after year.
+    </p>
+<!--     <div class="bar">
+      <a class="cta" href="#apply">Nominate a Peer</a>
+    </div> -->
+  </header>
+
+  <div class="rule"></div>
+
+  <!-- WHAT IS KAIZEND -->
+  <section class="wrap" id="what-is-kaizend">
+    <h2>Stewards of a Living Community</h2>
+    <p>Kaizend isn’t a fixed committee — it’s a living system of people who keep PythonPH healthy, adaptable, and full of heart. We learn through action, grow through collaboration, and pass every lesson forward.</p>
+
+    <div class="grid grid-3 cards">
+      <article class="card">
+        <h3>Succession &amp; Leadership</h3>
+        <p>Each year, new leaders step up with a smooth, joyful handover of experience, trust, and vision.</p>
+      </article>
+      <article class="card">
+        <h3>Culture &amp; Values</h3>
+        <p>We live <strong>Openness, Collaboration, Kindness,</strong> and <strong>Lifelong Learning</strong> — and mentor others through shared work.</p>
+      </article>
+      <article class="card">
+        <h3>Living Documentation</h3>
+        <p>Our “docs” live in people. We solve together, reflect honestly, and improve the system each cycle.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- PHILOSOPHY -->
+  <section class="wrap" id="philosophy">
+    <h2>Our Ethos: Kaizen + d</h2>
+    <p>Improvement isn’t a one-time project — it’s an ongoing rhythm built into how we work and who we become.</p>
+
+    <div class="grid grid-3 cards">
+      <article class="card">
+        <h3>Kaizen (Continuous Improvement)</h3>
+        <p>Small steps. Honest feedback. Everyday progress. The best systems — and communities — grow steadily.</p>
+      </article>
+      <article class="card">
+        <h3>d for daemon (Always Running)</h3>
+        <p>The “d” stands for a process that never stops. Kaizend is the background engine keeping things resilient.</p>
+      </article>
+      <article class="card">
+        <h3>Calm at the Core</h3>
+        <p>Stacked stones, ripples, and the lotus remind us: skill needs harmony, reflection, and care.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- STRUCTURE -->
+  <section class="wrap" id="structure">
+    <h2>The Core of Our Ecosystem</h2>
+    <p><strong>Board → Kaizend → Committees → Seasonal Volunteers → Wider Community</strong></p>
+    <p>Kaizend is the connector — the bridge that keeps energy flowing across every layer of PythonPH. Ideas move, people grow, and impact multiplies.</p>
+
+    <h3>Join the Core</h3>
+    <ul class="list">
+      <li><strong>By Invitation and Vouching:</strong> Selected from seasonal volunteers who showed initiative and are vouched by current members.</li>
+      <li><strong>Annual Renewal:</strong> We refresh membership each year to keep momentum high and perspectives fresh.</li>
+      <li><strong>Stewardship Mindset:</strong> It’s not about titles — it’s about care, growth, and responsibility.</li>
+    </ul>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- RHYTHM -->
+  <section class="wrap" id="rhythm">
+    <h2>The Kaizend Rhythm</h2>
+    <p>Each year follows a sustainable cycle of learning, leadership, and renewal — keeping the system healthy regardless of who holds the role.</p>
+
+    <div class="grid grid-3 cards">
+      <article class="card">
+        <h3>1. PyCon Season (September–March)</h3>
+        <p>Core members lead committees, execute programs, and mentor seasonal volunteers in real work.</p>
+      </article>
+      <article class="card">
+        <h3>2. Renewal &amp; Reflection (April–July)</h3>
+        <p>We review, document what worked, and nominate new members who demonstrated initiative.</p>
+      </article>
+      <article class="card">
+        <h3>3. Team Building &amp; Transition (August–September)</h3>
+        <p>New chairs step up, committees re-form, and the next cycle begins with shared purpose.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- PRIVILEGES -->
+  <section class="wrap" id="privileges">
+    <h2>We Invest in Those Who Build</h2>
+    <p>Kaizend is a two-way investment — you give your best to the community, and we help you grow as a leader, technologist, and human being.</p>
+
+    <div class="grid grid-2 cards">
+      <article class="card">
+        <h3>Core Volunteer Benefits</h3>
+        <ul class="list">
+          <li><strong>Continuous Improvement Fund:</strong> up to ₱10,000 yearly for training, certifications, or attending PyCon abroad.</li>
+          <li><strong>Exclusive Kaizend Activities:</strong> Team Building, Year-End Gatherings, and focused Kaizend Sessions.</li>
+          <li><strong>Professional Identity:</strong> Official <code>@kaizend.org</code> email address for your leadership role.</li>
+          <li><strong>Mastermind Network:</strong> Mentorship and collaboration with experienced PythonPH leaders.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Core Volunteer Commitment and Upkeep</h3>
+        <ul class="list">
+          <li><strong>Take Ownership:</strong> Lead a key part of your PyCon PH committee’s work and see it through with your team.</li>
+          <li><strong>Keep the momentum:</strong> Stay involved beyond the event — support your PythonPH committee, share what you learn, and help others do the same.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- FAQ -->
+  <section class="wrap" id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="grid cards">
+      <article class="card">
+        <h3>Who can join Kaizend?</h3>
+        <p>Active volunteers who’ve shown initiative, teamwork, and genuine care for the community. Candidates are usually nominated by current core members.</p>
+      </article>
+      <article class="card">
+        <h3>How are members selected?</h3>
+        <p>New members are invited after each PyCon cycle, based on performance and peer recommendations. It’s less about position — more about contribution and potential.</p>
+      </article>
+      <article class="card">
+        <h3>What if a member becomes inactive?</h3>
+        <p>We practice kind accountability. Members who can’t fulfill commitments step back, creating space for others to grow into leadership.</p>
+      </article>
+      <article class="card">
+        <h3>Is Kaizend only for technical leaders?</h3>
+        <p>No. We value organizers, creatives, and educators — anyone who makes PythonPH more inclusive, sustainable, and impactful.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- CTA -->
+  <section class="wrap" id="apply">
+    <h2>Your Growth, Our Shared Legacy</h2>
+    <p>If you’re ready to move beyond volunteering — to build, mentor, and shape the next chapter of the Filipino Python community — Kaizend is where it begins.</p>
+<!--     <div class="bar">
+      <a class="cta" href="#">Apply to Join the Kaizend Movement</a>
+    </div> -->
+  </section>
+
+  <footer>
+    <div class="wrap">© 2024 PythonPH Kaizend · Built by the community, for the community.</div>
+  </footer>
+</body>
+</html>
